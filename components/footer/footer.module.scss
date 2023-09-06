@@ -23,12 +23,12 @@
     &.columnPrincipal {
         margin-top: 0px;
     }
-    
+
     .title {
         @include SizeNormal;
         color: $white-color;
     }
-    
+
     h1 {
         @include SizeSmall;
         color: $green-color2;
@@ -49,12 +49,12 @@
         align-items: center;
         justify-content: center;
     }
-    
+
     @include Phone {
         margin-top: 0px;
 
         &.alignRight {
-            text-align: left;
+        text-align: left;
         }
     }
 }
@@ -62,7 +62,7 @@
 .allRightReserved {
     @include SizeSmall;
     padding: 6rem 0 1rem;
-    color: $gray-color;
+    color: $gray2-color;
     grid-column: span 4;
     text-align: center;
 

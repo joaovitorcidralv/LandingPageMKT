@@ -6,6 +6,7 @@ props
 title: String
 kind: "primary" | "secondary | full "
 */
+
 const Button = ({ title, kind }) => {
     const generationClassByKind = ()=> {
         if(kind === "secundary") return Styles.secundary;
@@ -13,9 +14,12 @@ const Button = ({ title, kind }) => {
 
         return Styles.primary;
     }
-    return <button className={`${Styles.button} ${generationClassByKind()}`}>
-        {title}
-        </button>;
+
+    return (
+        <button className={`${Styles.button} ${generationClassByKind()}`}>
+            {title}
+        </button>
+    );
 };
 
 export default Button;
