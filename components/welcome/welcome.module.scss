@@ -1,4 +1,6 @@
 @import "/styles/mixins/padding.scss";
+@import "/styles/mixins/responsive.scss";
+@import "/styles/mixins/fonts.scss";
 
 .container{
     @include Padding;
@@ -9,20 +11,31 @@
     background-size: cover;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+
+    @include Phone{
+        grid-template-columns: 1fr;
+        grid-template-rows: max-content;
+    }
 }
 
 .text{
     h1{
+        @include SizeExtra;
         font-weight: bold;
-        font-size: 71px;
     }
 
     p{
-        font-size: 30px;
+        @include SizeNormal;
         opacity: 0.8;
     }
 }
 
 .image{
     text-align: end;
+
+    @include Phone{
+        text-align: center;
+        grid-column: 1;
+        grid-row: 1;
+    }
 }

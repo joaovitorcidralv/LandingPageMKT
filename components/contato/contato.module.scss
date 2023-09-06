@@ -1,5 +1,8 @@
 @import "/styles/mixins/colors.scss";
 @import "/styles/mixins/padding.scss";
+@import "/styles/mixins/responsive.scss";
+@import "/styles/mixins/fonts.scss";
+
 
 .container{
     @include Padding;
@@ -12,21 +15,29 @@
     background-repeat: no repeat;
     background-size: cover;
     margin-bottom: 10rem;
+
+    @include Phone {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    @include Tablet {
+        margin-bottom: 4rem;
+    }
 }
 
 .texts{
     span{
-        font-size: 30px;
+        @include SizeNormal;
         font-weight: 600;
         color: $green-color2;
     }
     h1{
-        font-size: 65px;
+        @include SizeLarge;
         font-weight: bold;
-
     }
     p{
-        font-size: 30px;
+        @include SizeNormal;
         font-weight: 300;
         opacity: 0.7;
     }
@@ -43,20 +54,26 @@
     display: grid;
 
     h1{
-        padding: 0px;
-        margin: 0px;
         color: $purple-color;
         font-weight: bold;
-        font-size: 35px;
+        @include SizeMedium;
     }
 
     form{
         display: grid;
         gap: 23px;
     }
+
+    @include Phone {
+        padding: 1rem;
+        form {
+            gap: 1rem;
+        }
+    }
 }
 
 .footer{
+    @include SizeSmall;
     grid-column-start: 2;
     text-align: center;
     font-size: 20px;
@@ -66,5 +83,14 @@
     span{
         color: $white-color;
         cursor: pointer;
+    }
+
+    @include Phone {
+        grid-column-start: 1;
+        padding: 0 1rem;
+    }
+    
+    @include Tablet {
+        padding: 0 1rem;
     }
 }

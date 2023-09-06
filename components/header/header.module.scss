@@ -1,10 +1,11 @@
 @import "/styles/mixins/colors.scss";
 @import "/styles/mixins/padding.scss";
+@import "/styles/mixins/responsive.scss";
 
 .container{
     @include Padding; /*mixin*/
     color: $white-color; /*variable*/
-    padding-top: 34px auto;
+    padding-top: 34px;
     padding-bottom: 34px;
     width: 100%;
     background-color: $purple-color;
@@ -13,6 +14,11 @@
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
     justify-content: space-between;
+
+    @include Phone{
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
 }
 
 .menu{
@@ -21,10 +27,18 @@
     a+a{
         margin-left: 38.9px;
     }
+
+    @include Phone{
+        display: none;
+    }
 }
 
 .action{
     text-align: end;
+
+    @include Phone{
+        display: none;
+    }
 }
 
 
